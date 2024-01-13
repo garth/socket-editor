@@ -1,0 +1,46 @@
+@font-face {
+  font-family: 'Inter var';
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url('/fonts/Inter-roman.var.woff2?v=3.19') format('woff2');
+}
+@font-face {
+  font-family: 'Inter var';
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: italic;
+  font-named-instance: 'Italic';
+  src: url('/fonts/Inter-italic.var.woff2?v=3.19') format('woff2');
+}
+
+@tailwind base;
+@tailwind components;
+
+/* Style the editor */
+.ProseMirror {
+  @apply flex-shrink-0 flex-grow focus:outline-none;
+}
+.ProseMirror * {
+  @apply m-0;
+}
+.ProseMirror img {
+  @apply inline-block max-h-[60vh] max-w-[60vw];
+}
+.ProseMirror table,
+.ProseMirror td,
+.ProseMirror th {
+  @apply border border-solid border-gray-300 px-2 py-1;
+}
+.ProseMirror th {
+  @apply bg-gray-400 font-bold text-white;
+}
+.collaboration-cursor__caret {
+  @apply pointer-events-none relative -mx-px break-normal border-l-[1px] border-r-[1px] border-solid border-gray-900;
+}
+.collaboration-cursor__label {
+  @apply absolute -left-px -top-5 select-none whitespace-nowrap rounded px-0.5 py-px text-sm font-medium text-gray-900 opacity-95;
+}
+
+@tailwind utilities;

@@ -1,0 +1,36 @@
+{
+  "private": true,
+  "name": "@socket-editor/lib",
+  "description": "",
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./*": "./src/*"
+  },
+  "scripts": {
+    "lint": "pnpm eslint . && tsc --skipLibCheck",
+    "prettier": "prettier --write \"src/**/*.{js,json,ts,tsx,css,scss,html,sql}\""
+  },
+  "dependencies": {
+    "@paralleldrive/cuid2": "^2.2.2"
+  },
+  "peerDependencies": {
+    "@socketsupply/socket": "^0.5.4",
+    "buffer": "^6.0.3",
+    "lib0": "^0.2.88",
+    "y-protocols": "^1.0.6",
+    "yjs": "^13.6.10"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "prettier": "^3.2.1",
+    "typescript": "^5.3.3"
+  },
+  "volta": {
+    "node": "20.10.0"
+  }
+}

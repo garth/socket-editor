@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "name": "socket-editor",
+  "description": "",
+  "version": "0.1.0",
+  "license": "MIT",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20"
+  },
+  "volta": {
+    "node": "20.10.0"
+  }
+}
