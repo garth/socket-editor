@@ -11,6 +11,7 @@ export const uploadAsDataURL = (file: File): Promise<string> => {
   const reader = new FileReader()
   return new Promise((accept, reject) => {
     reader.onload = () => accept(reader.result as string)
+    // eslint-disable-next-line @typescript-eslint/prefer-promise-reject-errors
     reader.onerror = () => reject(reader.error)
     reader.readAsDataURL(file)
   })

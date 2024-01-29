@@ -1,12 +1,18 @@
-import { useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useDocumentState } from '../hooks/useDocumentState'
 import { Header } from '../components/Header'
 import { Editor } from '../components/Editor'
+import { type SocketProvider } from '@socket-editor/lib/socketProvider.js'
 
 export default function Document() {
   const { documentName } = useParams()
-  const [state, provider] = useDocumentState(documentName ?? 'unknown')
+  const [provider, setProvider] = useState<SocketProvider | null>(null)
+  const { state, socketProviderPromise } = useDocumentState(documentName ?? 'unknown')
+
+  useEffect(() => {
+    void socketProviderPromise.then(setProvider)
+  }, [socketProviderPromise])
 
   const presence = useMemo(
     () => ({
