@@ -44,3 +44,17 @@
 }
 
 @tailwind utilities;
+
+/* body[platform='ios'] {
+  #root {
+    @apply w-[100vw] landscape:px-16;
+  }
+
+  .app-container {
+    @apply portrait:pt-12;
+  }
+} */
+
+body {
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
